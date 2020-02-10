@@ -1,0 +1,70 @@
+﻿@model List<Activity2_1.Models.AirlineTicketModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test2</title>
+    <style>
+        .label1 {
+            font-size: 36;
+            color: mediumblue;
+            font-family: Arial;
+            font-weight: bold;
+            display: block;
+        }
+
+        #label2 {
+            font-size: 20;
+            color: dimgrey; 
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Airline Tickets</h1>
+
+        @Html.Label("Airline Tickets", new { @class = "label1" })
+        @Html.Label("Here is a list of your upcoming trips!", new { @id = "label2" })
+
+
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Destination</th>
+                <th>Date & Time</th>
+            </tr>
+            @foreach (var t in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => t.ID)</td>
+                    <td>@Html.DisplayFor(modelItem => t.Destination)</td>
+                    <td>@Html.DisplayFor(modelItem => t.Date))</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

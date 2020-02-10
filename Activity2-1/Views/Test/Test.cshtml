@@ -1,0 +1,48 @@
+﻿@model List<Activity2_1.Models.UserModel> 
+
+@{
+    ViewBag.Title = "My App"; 
+    Layout = "~/Views/Shared/_MyDefaultLayout.cshtml";
+}
+<!--
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+</head>
+<body>
+    -->
+    <div>
+        <h1>AMAZING NEWS!</h1>
+        <p>Corona Virus has cured only 1 person</p>
+
+        @Html.Label("Welcome to Razor", new { @class = "label1" })
+        @Html.Label("These are my customers", new { @class = "label1", @id = "label2" })
+
+        <div class="flex-container">
+
+            @foreach (var u in Model)
+            {
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://i.pravatar.cc/200" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => u.Name)</h5>
+                        <p class="card-text">Email Address: @Html.DisplayFor(modelItem => @u.EmailAddress)</p>
+                        <p class="card-text">Phone Number: @Html.DisplayFor(modelItem => @u.PhoneNumber)</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        @Html.ActionLink("Refresh this page", ".../test");
+
+        </div>
+
+
+        <!--
+    </body>
+    </html>
+    -->

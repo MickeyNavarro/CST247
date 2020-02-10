@@ -1,0 +1,48 @@
+﻿.footer {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.label1 {
+    font-size: 36;
+    color: aqua;
+    font-family: Arial;
+    font-weight: bold;
+    display: block;
+}
+
+#label2 {
+    font-size: 20;
+    color: darkred;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-container > div {
+    background-color: cornflowerblue;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+}
