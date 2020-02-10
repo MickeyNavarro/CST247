@@ -1,0 +1,43 @@
+﻿@model Activity2_2.Models.PokemonModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pokemon</title>
+</head>
+<body>
+    <div>
+        <h1>Here is the evolution of Squirtle!</h1>
+
+        @using (Html.BeginForm("HandleButtonClick", "Pokemon"))
+        {
+            <button type="submit" name="evolve" value=@Model.Evolve>
+                @if (Model.Evolve == 1)
+                {
+                    <img src="~/Images/squirtle.jpg" />
+                    @Html.Label("Squirtle")
+
+                }
+                else if (Model.Evolve == 2)
+                {
+                    <img src="~/Images/wartortle.jpg" />
+                    @Html.Label("Wartortle")
+
+                }
+                else
+                {
+                    <img src="~/Images/blastoise.jpg" />
+                    @Html.Label("Blastoise")
+
+                }
+            </button>
+        }
+    </div>
+</body>
+</html>
