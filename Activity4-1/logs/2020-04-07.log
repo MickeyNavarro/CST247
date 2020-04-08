@@ -1,0 +1,15 @@
+2020-04-07 20:53:13.6206Entering LoginController.Login()
+2020-04-07 20:53:13.6785Parameters are: new JavaScriptSerializer().Serialize(user)
+2020-04-07 20:53:45.0048Exiting LoginController.Login() with login failing
+2020-04-07 20:54:20.5044Entering LoginController.Login()
+2020-04-07 20:54:20.5044Parameters are: new JavaScriptSerializer().Serialize(user)
+2020-04-07 20:54:20.5623Exiting LoginController.Login() with login failing
+2020-04-07 20:54:48.2204Entering LoginController.Login()
+2020-04-07 20:54:48.2204Parameters are: new JavaScriptSerializer().Serialize(user)
+2020-04-07 20:54:48.2463Exiting LoginController.Login() with login passing
+2020-04-07 22:04:31.5162Entering LoginController.Login()
+2020-04-07 22:04:31.5431Parameters are: new JavaScriptSerializer().Serialize(user)
+2020-04-07 22:04:40.0608Exiting LoginController.Login() with login failing
+2020-04-07 22:07:54.1090Entering LoginController.Login()
+2020-04-07 22:07:54.1090Parameters are: new JavaScriptSerializer().Serialize(user)
+2020-04-07 22:07:54.1662Exiting LoginController.Login() with login passing
