@@ -14,7 +14,7 @@ namespace BibleVerseApp.Services.Business
             SecurityDAO service = new SecurityDAO();
             return service.EnterNewVerse(bibleVerseModel);
         }
-        public bool Search(BibleVerseModel bibleVerseModel)
+        public BibleVerseModel Search(BibleVerseModel bibleVerseModel)
         {
             SecurityDAO service = new SecurityDAO();
             return service.FindVerse(bibleVerseModel);
