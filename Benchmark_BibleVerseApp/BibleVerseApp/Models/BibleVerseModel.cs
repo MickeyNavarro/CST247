@@ -31,6 +31,16 @@ namespace BibleVerseApp.Models
         [Required]
         [DisplayName("Verse Text")]
         public string VerseText { get; set; }
-    
+
+        public BibleVerseModel(){}
+
+        public BibleVerseModel(string testament, string book, int chapterNumber, int verseNumber, string verseText)
+        {
+            Testament = testament;
+            Book = book;
+            ChapterNumber = chapterNumber;
+            VerseNumber = verseNumber;
+            VerseText = verseText;
+        }
     }
 }
