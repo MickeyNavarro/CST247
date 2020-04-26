@@ -71,17 +71,17 @@ namespace BibleVerseApp.Controllers
             //create an instance of the security service to access the search method 
             SecurityService securityService = new SecurityService();
 
-            
+            //set the results to a new bibleversemodel
+            BibleVerseModel verseFound = new BibleVerseModel(securityService.Search(verseModel).Testament, securityService.Search(verseModel).Book, securityService.Search(verseModel).ChapterNumber, securityService.Search(verseModel).VerseNumber, securityService.Search(verseModel).VerseText); 
 
             try
             {
-                //return the results to a bool to show if the search was successful or not
-                Boolean success = securityService.Search(verseModel);
+                
                 //check the results and return the appropriate page
-                if (success)
+                if (securityService.Search(verseModel) != null)
                 {
                     MyLogger.GetInstance().Info("Exiting BibleController.FindVerse() with successful search of a certain verse.");
-                    return View("FindVerseSuccess", verseModel);
+                    return View("FindVerseSuccess", verseFound);
                 }
                 else
                 {
