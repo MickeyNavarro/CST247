@@ -17,7 +17,7 @@ namespace BibleVerseApp.Services.Data
             bool success = false;
 
             //provide the wuery string with a parameter placeholder
-            string queryString = "insert into dbo.Bible (book, chapter, verse, text, testament) values (@Book, @ChapterNumber, @VerseNumber, @VerseText, @Testament)";
+            string queryString = "insert into dbo.Bible (b, c, v, t, test) values (@Book, @ChapterNumber, @VerseNumber, @VerseText, @Testament)";
 
             //create and open the connection in a using block. This ensures that all resources will be closed and disclosed when the code exists
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -51,13 +51,11 @@ namespace BibleVerseApp.Services.Data
             return success;
         }
 
-        public bool FindVerse(BibleVerseModel bibleVerse)
+        public BibleVerseModel FindVerse(BibleVerseModel bibleVerse)
         {
-            //assume that nothing is in the query 
-            bool success = false;
 
             //provide the wuery string with a parameter placeholder
-            string queryString = "select * from dbo.Bible where testament = @Testament and book = @Book and chapter = @ChapterNumber and verse = @VerseNumber";
+            string queryString = "select * from dbo.Bible where test = @Testament and b = @Book and c = @ChapterNumber and v = @VerseNumber";
 
             //create and open the connection in a using block. This ensures that all resources will be closed and disclosed when the code exists
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -72,20 +70,20 @@ namespace BibleVerseApp.Services.Data
                 try
                 {
                     conn.Open();
-                    //save to see what row found in the database
+                    // Using a DataReader see if query returns any rows
                     SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        return new BibleVerseModel(reader["test"].ToString(), reader["b"].ToString(), int.Parse(reader["c"].ToString()), int.Parse(reader["v"].ToString()), reader["t"].ToString());
 
-                    //check if the reader was successful
-                    if (reader.HasRows)
-                        success = true;
-                    reader.Close();
+                    }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
-            return success;
+            return new BibleVerseModel();
         }
     }
 }
