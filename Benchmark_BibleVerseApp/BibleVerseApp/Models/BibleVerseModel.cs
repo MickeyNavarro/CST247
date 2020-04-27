@@ -10,6 +10,8 @@ namespace BibleVerseApp.Models
 {
     public class BibleVerseModel
     {
+        public int ID { get; set; } 
+        
         [Required]
         [DisplayName("Testament Selection")]
         public string Testament { get; set; }
